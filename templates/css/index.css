@@ -1,0 +1,8 @@
+.is-fullheight {
+  height: 100%;
+}
+
+.novel-content {
+  max-width: 600px;
+  text-align: justify;
+}

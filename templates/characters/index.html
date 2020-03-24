@@ -1,0 +1,22 @@
+
+{% if characters %}
+  <h1 class="title">Les personnages</h1>
+  <div class="columns">
+    {% for character in characters %}
+    <div class="column">
+      <div class="card is-fullheight">
+        <div class="card-content">
+          <p class="title is-4">{{ character.name }}</p>
+          <div class="content">
+            {{ character.biography | safe  }}
+            <a href="{% url 'characters:detail' character.id %}">Lire</a>
+            {{ character.novellas }}
+
+            <br>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endif %}
