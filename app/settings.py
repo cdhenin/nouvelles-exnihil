@@ -25,7 +25,7 @@ SECRET_KEY = 'b^%-26t4y5qglt61ni^5bc0u_659f1!&036eskzd^!s28^czhy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['nouvelles.exnihil.fr']
 
 
 # Application definition
@@ -80,8 +80,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nouvelles_exnihil',
-        'USER': 'postgres',
-        'PASSWORD': 'postgres',
+        'USER': 'nouvelles',
+        'PASSWORD': '7gQHtYzG5aHxThoxcpP8mfMJtTiL',
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -129,3 +129,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, "templates/css/"), 
     os.path.join(BASE_DIR, "static/")
 ]
+STATIC_ROOT = os.path.join(BASE_DIR, "static/")
