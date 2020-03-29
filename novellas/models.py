@@ -1,5 +1,6 @@
 import re
 import html
+from django.utils.timezone import now
 from tinymce.models import HTMLField
 from django.db import models
 from characters.models import Character
@@ -21,10 +22,10 @@ class Tag(models.Model):
 class Novella(models.Model):
     title = models.CharField(max_length=200)
     text = HTMLField()
-    excerpt = models.TextField(max_length=500, null=True)
+    excerpt = models.TextField(max_length=500, null=True, blank=True)
     characters = models.ManyToManyField(Character, verbose_name="list of characters", related_name="novellas")
     tags = models.ManyToManyField(Tag, verbose_name="list of tags")
-    created_at = models.DateTimeField('creation date')
+    created_at = models.DateTimeField('creation date', default=now, blank=True)
 
     def to_dict(self):
         return {

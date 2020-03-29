@@ -19,7 +19,7 @@ def get_excerpt(text):
 class Character(models.Model):
     name = models.CharField(max_length=200)
     biography = HTMLField()
-    excerpt = models.TextField(max_length=500, null=True)
+    excerpt = models.TextField(max_length=500, blank=True, null=True)
 
     def to_dict(self):            
         return {
