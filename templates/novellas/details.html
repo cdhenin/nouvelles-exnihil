@@ -1,11 +1,10 @@
 <div class="columns is-centered">
-  <div class="column">
-    <div class="card novel-content is-pulled-right">
+  <div class="column novel-read">
+    <div class="card is-pulled-right">
       <div class="card-content">
+        <h1 class="title is-1">{{novella.title}}</h1>
         <div class="content">
-          <h1>{{novella.title}}</h1>
-  
-          <div class="tags">
+          <div class="tags are-medium is-capitalized">
             {% for tag in novella.tags %}
               <a class="tag is-primary" href="{% url 'novellas:index'%}?tag={{ tag.id }}">{{tag.name}}</a>
             {% endfor %}
@@ -17,14 +16,14 @@
   </div>
   <div class="column is-one-third">
     <div class="card">
-      <div class="card-header">
-        <h1 class="card-header-title">Les personnages</h1>        
-      </div>
+      <h1 class="title is-3 card-header-title">Les personnages</h1>        
       <div class="card-content">
         {% for character in novella.characters %}
-        <h2 class="title id-2">{{character.name}}</h2>
-        <div class="content">{{character.biography | safe}}</div>
-        <a class="button is-text" href="{% url 'characters:detail' character.id %}">Voir plus</a>
+        <h2 class="title is-4">{{character.name}}</h2>
+        <div class="content">{{character.excerpt}}</div>
+        <div class="flex align-end">
+          <a class="button" href="{% url 'characters:detail' character.id %}">Voir plus</a>
+        </div>
         {% endfor %}
       </div>
     </div>

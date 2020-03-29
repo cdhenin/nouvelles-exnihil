@@ -1,0 +1,16 @@
+
+<h1 class="title">Lexique</h1>
+
+{% if items %}
+  {% for item in items %}
+    <div id="{{item.name}}" >
+        <h2 class="title is-2">{{ item.name }}</h2>
+        <p>{{item.definition}}</p>
+    </div>
+    <hr />
+  {% endfor %}
+</div>
+{% else %}
+<span>Aucun élement pour l'instant</span>
+{% endif %}
+

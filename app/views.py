@@ -17,3 +17,9 @@ def index(request):
         'main_characters': characters,
         'template': 'home/index.html'
     })
+
+def about(request):
+    return custom_render(request, {
+        'title': 'À propos',
+        'template': 'about/index.html'
+    })

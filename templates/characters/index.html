@@ -4,18 +4,7 @@
   <div class="columns">
     {% for character in characters %}
     <div class="column">
-      <div class="card is-fullheight">
-        <div class="card-content">
-          <p class="title is-4">{{ character.name }}</p>
-          <div class="content">
-            {{ character.biography | safe  }}
-            <a href="{% url 'characters:detail' character.id %}">Lire</a>
-            {{ character.novellas }}
-
-            <br>
-          </div>
-        </div>
-      </div>
+      {% include 'characters/listItem.html' %}
     </div>
     {% endfor %}
   </div>

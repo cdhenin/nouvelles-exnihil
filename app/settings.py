@@ -25,12 +25,13 @@ SECRET_KEY = 'b^%-26t4y5qglt61ni^5bc0u_659f1!&036eskzd^!s28^czhy'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['nouvelles.exnihil.fr']
+ALLOWED_HOSTS = ['nouvelles.exnihil.fr', 'localhost']
 
 
 # Application definition
 
 INSTALLED_APPS = [
+    'lexiconItems.apps.LexiconItemsConfig',
     'novellas.apps.NovellasConfig',
     'characters.apps.CharactersConfig',
     'django.contrib.admin',
@@ -80,8 +81,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'nouvelles_exnihil',
-        'USER': 'nouvelles',
-        'PASSWORD': '7gQHtYzG5aHxThoxcpP8mfMJtTiL',
+        'USER': os.environ.get('POSTGRES_USER', 'nouvelles'),
+        'PASSWORD': os.environ.get('POSTGRES_PASSWORD', '7gQHtYzG5aHxThoxcpP8mfMJtTiL'),
         'HOST': '127.0.0.1',
         'PORT': '5432',
     }
@@ -126,7 +127,18 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, "templates/css/"), 
-    os.path.join(BASE_DIR, "static/")
+    os.path.join(BASE_DIR, "style/css"),
+    os.path.join(BASE_DIR, "style/img"),
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
+
+
+# TINYMCE
+
+TINYMCE_DEFAULT_CONFIG = {
+  'height': 500,
+  'width': '100%',
+  'menubar': False,
+  'toolbar': 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
+  'content_css': '/static/codepen.css'
+}

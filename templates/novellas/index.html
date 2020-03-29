@@ -1,29 +1,9 @@
 {% if novellas %}
   <h1 class="title">Les nouvelles</h1>
-  <div class="columns">
+  <div class="columns is-multiline">
     {% for novella in novellas %}
-    <div class="column">
-      <div class="card is-fullheight">
-        <div class="card-content">
-          <p class="title is-4">{{ novella.title }}</p>
-          <div class="content">
-            {{ novella.summary | safe  }}
-            <a href="{% url 'novellas:detail' novella.id %}">Lire</a>
-            <div class="tags">
-              {% for character in novella.characters %}
-                <a class="tag is-primary" href="{% url 'characters:detail' character.id %}">{{character.name}}</a>
-              {% endfor %}
-            </div>
-            <div class="tags">
-              {% for tag in novella.tags %}
-                <a class="tag is-secondary" href="{% url 'novellas:index'%}?tag={{ tag.id }}">{{tag.name}}</a>
-              {% endfor %}
-            </div>
-            <br>
-            <time datetime="2016-1-1">{{ novella.created_at }}</time>
-          </div>
-        </div>
-      </div>
+    <div class="column is-half">
+      {% include 'novellas/listItem.html' %}
     </div>
     {% endfor %}
   </div>
