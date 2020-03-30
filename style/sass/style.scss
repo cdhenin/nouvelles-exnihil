@@ -73,6 +73,13 @@ $button-border-width: 1px;
     }
 }
 
+.content-read {
+    text-align: justify;
+    p {
+        text-indent: 5%;
+    }
+}
+
 .card {
     display: flex;
     flex-direction: column;

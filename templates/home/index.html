@@ -12,18 +12,28 @@
   </div>
 {% endif %}
 
-{% if main_characters %}
+<div class="columns">
 
-  <div class="flex space-between">
-    <h1 class="title">Les personnages</h1>
-    <a href="{% url 'characters:index' %}" class="button is-pulled-right">Voir tout</a>
+  <div class="column is-half">
+    {% include 'home/presentation.html' %}
+
   </div>
+  {% if main_characters %}
 
-  <div class="columns">
-    {% for character in main_characters %}
-    <div class="column is-half">
-      {% include 'characters/listItem.html' %}
+  <div class="column is-half">
+    <div class="flex space-between">
+      <h1 class="title">Les personnages</h1>
+      <a href="{% url 'characters:index' %}" class="button is-pulled-right">Voir tout</a>
     </div>
-    {% endfor %}
+  
+    <div class="columns flex direction-column">
+      {% for character in main_characters %}
+      <div class="column">
+        {% include 'characters/listItem.html' %}
+      </div>
+      {% endfor %}
+    </div>
   </div>
-{% endif %}
+  {% endif %}
+
+</div>
