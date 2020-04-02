@@ -6323,6 +6323,11 @@ label.panel-block {
   .novel-read .card .content p {
     text-indent: 5%; }
 
+.content-read {
+  text-align: justify; }
+  .content-read p {
+    text-indent: 5%; }
+
 .card {
   display: flex;
   flex-direction: column; }
