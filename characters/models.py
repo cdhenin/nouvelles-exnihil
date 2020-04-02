@@ -26,6 +26,6 @@ class Character(models.Model):
             'id': self.id,
             'name': self.name,
             'biography': self.biography,
-            'excerpt': self.excerpt if self.excerpt is not None else get_excerpt(self.biography),
+            'excerpt': self.excerpt if self.excerpt else get_excerpt(self.biography),
             'novellas': self.novellas.values('title', 'id', 'excerpt', 'tags', 'created_at'),
         }
