@@ -5,7 +5,7 @@ from .models import Tag, Novella
 
 class NovellaAdmin(admin.ModelAdmin):
     list_display = ('title', 'created_at',)
-
+    filter_horizontal = ('tags', 'characters') 
 
 class TagAdmin(admin.ModelAdmin):
     list_display = ('name',)
