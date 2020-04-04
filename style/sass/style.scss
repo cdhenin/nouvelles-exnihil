@@ -31,10 +31,12 @@ $button-border-width: 1px;
 // Import only what you need from Bulma
 @import "./node_modules/bulma/sass/utilities/_all.sass";
 @import "./node_modules/bulma/sass/base/_all.sass";
+@import "./node_modules/bulma/sass/grid/columns.sass";
 @import "./node_modules/bulma/sass/elements/_all.sass";
-@import "./node_modules/bulma/sass/components/_all.sass";
-@import "./node_modules/bulma/sass/grid/_all.sass";
-@import "./node_modules/bulma/sass/layout/_all.sass";
+@import "./node_modules/bulma/sass/components/card.sass";
+@import "./node_modules/bulma/sass/components/navbar.sass";
+@import "./node_modules/bulma/sass/layout/section.sass";
+
 
 .flex {
     display: flex;
@@ -91,4 +93,12 @@ $button-border-width: 1px;
     footer {
         padding: 1rem;
     }
+}
+
+
+.margin-top {
+    &.is-one {
+        margin-top: 1rem;
+    }
+
 }

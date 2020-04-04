@@ -27,7 +27,15 @@ class Novella(models.Model):
     tags = models.ManyToManyField(Tag, verbose_name="list of tags")
     created_at = models.DateTimeField('creation date', default=now, blank=True)
 
-    def to_dict(self):
+    def to_dict(self, short=False):
+        if(short == True):
+            return {
+                'id': self.id,
+                'title': self.title,
+                'excerpt': self.excerpt if self.excerpt else get_excerpt(self.text),
+                'created_at': self.created_at,
+                'tags': self.tags.values('name', 'id')
+            }
         return {
             'id': self.id,
             'title': self.title,
