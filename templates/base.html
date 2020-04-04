@@ -4962,5 +4962,13 @@ a.navbar-item,
         {% include template %}
       </div>
     </section>
+
+
+  <script>
+    document.getElementById("burger").addEventListener("click", function(event) {
+      document.getElementById("navbar").classList.toggle('is-active')
+      event.target.classList.toggle('is-active')
+    });
+  </script>
   </body>
 </html>
