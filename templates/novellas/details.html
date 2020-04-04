@@ -1,15 +1,17 @@
 <div class="columns is-centered">
   <div class="column novel-read">
-    <div class="card is-pulled-right">
-      <div class="card-content">
-        <h1 class="title is-1">{{novella.title}}</h1>
-        <div class="content">
-          <div class="tags are-medium is-capitalized">
-            {% for tag in novella.tags %}
-              <a class="tag is-primary" href="{% url 'novellas:index'%}?tag={{ tag.id }}">{{tag.name}}</a>
-            {% endfor %}
+    <div class="flex align-end">
+      <div class="card">
+        <div class="card-content">
+          <h1 class="title is-1">{{novella.title}}</h1>
+          <div class="content">
+            <div class="tags are-medium is-capitalized">
+              {% for tag in novella.tags %}
+                <a class="tag is-primary" href="{% url 'novellas:index'%}?tag={{ tag.id }}">{{tag.name}}</a>
+              {% endfor %}
+            </div>
+            {{novella.text | safe }}
           </div>
-          {{novella.text | safe }}
         </div>
       </div>
     </div>
