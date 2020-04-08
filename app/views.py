@@ -10,11 +10,9 @@ def custom_render(request, params={}, template='base.html'):
     return render(request, template, params)
 
 def index(request):
-    novellas = [novella.to_dict() for novella in Novella.objects.order_by('-created_at')[:5]]
-    characters = [character.to_dict() for character in Character.objects.all()[:5]]
+    novellas = [novella.to_dict() for novella in Novella.objects.order_by('-created_at')[:2]]
     return custom_render(request, {
         'last_novellas': novellas,
-        'main_characters': characters,
         'template': 'home/index.html'
     })
 

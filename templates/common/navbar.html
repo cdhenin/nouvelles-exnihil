@@ -17,6 +17,14 @@
         Accueil
       </a>
 
+      <a href="/novellas" class="navbar-item">
+        Nouvelles
+      </a>
+
+      <a href="/characters" class="navbar-item">
+        Personnages
+      </a>
+
       <a href="/lexicon" class="navbar-item">
         Lexique
       </a>
@@ -28,3 +36,8 @@
     </div>
   </div>
 </nav>
+
+<script type="text/javascript">
+  const pathname = `/${window.location.pathname.split('/')[1]}`;
+  document.querySelector(`.navbar-start > a.navbar-item[href='${pathname}']`).classList.add('is-active')
+</script>
