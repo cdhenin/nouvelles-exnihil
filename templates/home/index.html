@@ -39,3 +39,107 @@
   {% endif %}
 </div>
 
+<script type="text/javascript">
+  var timeline_json = {
+    "events": [
+      {
+        "start_date": {
+          "month": "2",
+          "day": "11",
+          "year": "2049"
+        },
+        "text": {
+          "headline": "DUT (Déclaration Universelle du Travail)",
+          "text": "<p>La DUT est adoptée par les Nations Unies et régit les lois de tous les pays sur le travail. Le travail ne peut qu’être productif et, s’il en a la possibilité, automatisé. Les humains, même s’ils ne travaillent pas, ont droit au confort matériel propice à leur réflexion sur le sens qu’ils veulent donner à leur vie. La volonté de création de valeur est remplacée par la volonté de définition de la valeur.</p>"
+        }
+      },
+      {
+        "start_date": {
+          "month": "25",
+          "day": "04",
+          "year": "2057"        
+        },
+        "text": {
+          "headline": "Création de Quod Totum Contra Est",
+          "text": "Un ensemble de bourgeois agacés par le nihilisme fondent la religion Quod Totum Contra Est et la gère comme une entreprise classique. Ils établissent le vocabulaire encore utilisé aujourd'hui : encroyés, encroyants, nihilés, etc."
+        }
+      },
+      {
+        "start_date": {
+          "month": "08",
+          "day": "06",
+          "year": "2066"
+        },
+        "text": {
+          "headline": "Création de l’OMR",
+          "text": "L’Organisation de Médiation Religieuse est fondée. Elle vise à assurer la bonne entente entre les religions et cimente le droit interreligieux non couvert par celles-ci. Les États ne sont plus que des faire-valoir géographiques."
+        }
+      },
+      {
+        "start_date": {
+          "month": "03",
+          "day": "28",
+          "year": "2074"
+        },
+        "text": {
+          "headline": "Premier gouvernement inter-religieux nommé par l’OMR",
+          "text": "Les États sont officiellement dissous, à quelques exceptions près, et l’ONU est dissoute. Un premier gouvernement mondial inter-religieux est nommé par l’OMR."
+        }
+      },
+      {
+        "start_date": {
+          "month": "02",
+          "day": "11",
+          "year": "2049"
+        },
+        "end_date": {
+          "month": "05",
+          "day": "01",
+          "year": "2090"
+        },
+        "text": {
+          "headline": "Le Grand Froid",
+          "text": "Période de gel du progrès et des nouvelles technologies pour limiter les risques éthiques et recentrer le travail sur la production matérielle (automatisée ou non)."
+        }
+      },
+      {
+        "start_date": {
+          "month": "11",
+          "day": "18",
+          "year": "2056"
+        },
+        "end_date": {
+          "month": "04",
+          "day": "25",
+          "year": "2057"
+        },
+        "text": {
+          "headline": "Le soulèvement de l'ennui",
+          "text": "Après la DUT, l'ennui s'installe et la plupart des gens cèdent à la folie, ce qui mène à plusieurs révolutions de différentes formes dans le monde."
+        }
+      },
+      {
+        "start_date": {
+          "month": "04",
+          "day": "25",
+          "year": "2057"
+        },
+        "end_date": {
+          "month": "08",
+          "day": "06",
+          "year": "2066"
+        },
+        "text": {
+          "headline": "L’Exode de Nihilie",
+          "text": "Période dont le nom fait débat au sein de la communauté historienne. Elle démarre avec la création de QTCE et voit la création de toutes les grandes religions de la fin du XXIème siècle, dont Christ B.C., Mahomet Ingénierie ou encore Je’w ishes, toutes fondées sur le modèle de QTCE. Les États, qui subviennent encore aux besoins de leurs peuples, perdent de plus en plus d’influence à côté des religions qui encroient à tour de bras et assurent la subsistance de leurs adeptes."
+        }
+      },
+    ]
+  }
+
+  // two arguments: the id of the Timeline container (no '#')
+  // and the JSON object or an instance of TL.TimelineConfig created from
+  // a suitable JSON object
+  window.timeline = new TL.Timeline('timeline-embed', timeline_json, { language: 'fr' });
+
+</script>
