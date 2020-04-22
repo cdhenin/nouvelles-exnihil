@@ -19,6 +19,12 @@ def get_excerpt(text):
 class Tag(models.Model):
     name = models.CharField(max_length=200, unique=True)
 
+    def to_dict(self):
+        return {
+            'id': self.id,
+            'name': self.name
+        }
+
 class Novella(models.Model):
     title = models.CharField(max_length=200)
     text = HTMLField()

@@ -1,5 +1,16 @@
 {% if novellas %}
   <h1 class="title">Les nouvelles</h1>
+
+  {% if tags %}
+    <div class="tags are-medium is-capitalized has-addons">
+      {% for tag in tags %}
+        <div class="tag is-secondary">{{ tag.name }}</div>
+        <a class="tag is-delete" href="{% url 'novellas:index'%}"></a>
+      {% endfor %}
+    </div>
+  {% endif %}
+
+
   <div class="columns is-multiline">
     {% for novella in novellas %}
     <div class="column is-half">
