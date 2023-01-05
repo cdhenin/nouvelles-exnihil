@@ -36,6 +36,10 @@ $button-border-width: 1px;
 @import "./node_modules/bulma/sass/helpers/spacing.sass";
 @import "./node_modules/bulma/sass/helpers/color.sass";
 
+*::selection{
+    color: white;
+    background: #757763;
+}
 
 .flex {
     display: flex;
@@ -66,6 +70,22 @@ $button-border-width: 1px;
         text-align: justify;
 
         .content {
+
+            p:first-child {
+                text-indent: 0;
+                
+                &::first-letter {
+                    font-weight: bold;
+                    background: $beige-lighter;
+                    color: $brown;
+                    font-size: 5rem;
+                    padding: 1rem;
+                    margin-right: 5px;
+                    float: inline-start;
+                    border-radius: 3px;
+                }
+            }
+
             p {
                 text-indent: 5%;
             }
@@ -76,6 +96,14 @@ $button-border-width: 1px;
 
 .content-read {
     text-align: justify;
+
+    @media screen and (min-width: 768px) {
+        >.content-columns {
+            column-count: 2; 
+            column-gap: 3rem;
+        }
+    }    
+   
     p {
         text-indent: 5%;
     }

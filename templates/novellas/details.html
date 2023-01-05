@@ -10,7 +10,9 @@
                 <a class="tag is-primary" href="{% url 'novellas:index'%}?tag={{ tag.id }}">{{tag.name}}</a>
               {% endfor %}
             </div>
-            {{novella.text | safe }}
+            <div class="content-read">
+              {{novella.text | safe }}
+            </div>
           </div>
         </div>
       </div>
