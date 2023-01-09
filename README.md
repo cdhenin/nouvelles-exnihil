@@ -30,3 +30,17 @@ Then run:
 $ python manage.py migrate
 $ python manage.py runserver
 ```
+
+### Development
+
+- Regenerate static folder
+```
+$ python manage.py collectstatic --noinput --clear
+```
+
+- Generate css from scss 
+```
+$ cd style
+$ yarn install
+$ yarn start
+```

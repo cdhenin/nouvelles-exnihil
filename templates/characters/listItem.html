@@ -1,11 +1,11 @@
-<div class="card is-fullheight">
+<div class="card is-fullheight is-fullwidth papernote paper-tape">
     <div class="card-content">
       <p class="title is-4">{{ character.name }}</p>
       <div class="content">
         {{ character.excerpt  }}
       </div>
     </div>
-    <footer>
-      <a class="button is-pulled-right" href="{% url 'characters:detail' character.id %}">Voir toute la biographie</a>
+    <footer class="is-flex is-justify-content-flex-end">
+      <a class="button papernote" href="{% url 'characters:detail' character.id %}">Voir toute la biographie</a>
     </footer>
 </div>

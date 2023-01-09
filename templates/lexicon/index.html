@@ -1,16 +1,18 @@
+<div class="container">
+  <div class="paperblock after before p-6">
+    <h1 class="title is-handwritten is-underlined">Lexique</h1>
 
-<h1 class="title">Lexique</h1>
-
-{% if items %}
-  {% for item in items %}
-    <div id="{{item.name}}" >
-        <span class="title is-5">{{ item.name }} :</span>
-        <span>{{item.definition}}</span>
-    </div>
-    <hr />
-  {% endfor %}
+    {% if items %}
+      {% for item in items %}
+      <div id="{{item.name}}">
+          <span class="title is-5">{{ item.name }} :</span>
+          <span>{{item.definition}}</span>
+        </div>
+        <hr />
+        {% endfor %}
+      </div>
+    {% else %}
+      <span>Aucun élement pour l'instant</span>
+    {% endif %}
+  </div>
 </div>
-{% else %}
-<span>Aucun élement pour l'instant</span>
-{% endif %}
-

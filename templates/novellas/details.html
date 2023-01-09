@@ -1,13 +1,17 @@
-<div class="columns is-centered">
+{% load tz %}
+<div class="columns is-centered is-desktop">
   <div class="column novel-read">
-    <div class="flex align-end">
-      <div class="card">
+    <div class="is-flex is-justify-content-end">
+      <div class="paperblock">
         <div class="card-content">
-          <h1 class="title is-1">{{novella.title}}</h1>
+          <div class="columns">
+            <h1 class="title column is-two-thirds has-text-left is-size-2">{{novella.title}}</h1>
+            <span class="is-handwritten subtitle m-0 has-text-right column is-one-third">{{ novella.created_at|localtime|date:'d/m/Y' }}</span>
+          </div>
           <div class="content">
             <div class="tags are-medium is-capitalized">
               {% for tag in novella.tags %}
-                <a class="tag is-primary" href="{% url 'novellas:index'%}?tag={{ tag.id }}">{{tag.name}}</a>
+              <a class="tag is-primary" href="{% url 'novellas:index'%}?tag={{ tag.id }}">{{tag.name}}</a>
               {% endfor %}
             </div>
             <div class="content-read">
@@ -18,19 +22,18 @@
       </div>
     </div>
   </div>
-  <div class="column is-one-third">
-    <div class="card">
-      <h1 class="title is-3 card-header-title mb-2 px-5 pt-5 pb-0">Les personnages</h1>        
-      <div class="card-content">
-        {% for character in novella.characters %}
-        <h2 class="title is-4">{{character.name}}</h2>
-        <div class="content">{{character.excerpt}}</div>
-        <div class="flex align-end">
-          <a class="button" href="{% url 'characters:detail' character.id %}">Voir plus</a>
+  <div class="column is-one-third-desktop">
+    <h1 class="title papernote is-3 card-header-title">Les personnages</h1>
+    {% for character in novella.characters %}
+      <div class="card papernote" style="max-width: 500px;">
+        <div class="card-content">
+          <h2 class="title is-4">{{character.name}}</h2>
+          <div class="content">{{character.excerpt}}</div>
+          <div class="is-flex is-justify-content-end">
+            <a class="button papernote" href="{% url 'characters:detail' character.id %}">Voir plus</a>
+          </div>
         </div>
-        {% endfor %}
       </div>
-    </div>
+    {% endfor %}
   </div>
 </div>
-

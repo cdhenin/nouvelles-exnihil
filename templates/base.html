@@ -15,10 +15,9 @@
   <body>
     {% include 'common/navbar.html' %}
     <section class="section">
-      <div class="container">
-        {% include template %}
-      </div>
+      {% include template %}
     </section>
+    {% include 'common/footer.html' %}
 
     <script type="text/javascript">
       document.getElementById("burger").addEventListener("click", function(event) {

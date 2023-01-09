@@ -1,9 +1,9 @@
 
 {% if characters %}
-  <h1 class="title">Les personnages</h1>
-  <div class="columns">
+  <h1 class="title papernote">Les personnages</h1>
+  <div class="papernotes">
     {% for character in characters %}
-    <div class="column">
+    <div class="papernote-wrapper">
       {% include 'characters/listItem.html' %}
     </div>
     {% endfor %}
