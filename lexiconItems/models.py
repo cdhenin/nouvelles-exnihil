@@ -5,6 +5,9 @@ class LexiconItem(models.Model):
     name = models.CharField(max_length=200)
     definition = models.TextField()
     created_at = models.DateTimeField('creation date', default=now, blank=True)
+    
+    def __str__(self):
+        return self.name
 
     def to_dict(self):
         return {

@@ -19,6 +19,9 @@ def get_excerpt(text):
 class Tag(models.Model):
     name = models.CharField(max_length=200, unique=True)
 
+    def __str__(self):
+        return self.name
+
     def to_dict(self):
         return {
             'id': self.id,
@@ -32,6 +35,9 @@ class Novella(models.Model):
     characters = models.ManyToManyField(Character, verbose_name="list of characters", related_name="novellas")
     tags = models.ManyToManyField(Tag, verbose_name="list of tags")
     created_at = models.DateTimeField('creation date', default=now, blank=True)
+
+    def __str__(self):
+        return self.title
 
     def to_dict(self, short=False):
         if(short == True):

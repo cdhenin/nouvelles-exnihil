@@ -20,6 +20,9 @@ class Character(models.Model):
     name = models.CharField(max_length=200)
     biography = HTMLField()
     excerpt = models.TextField(max_length=500, blank=True, null=True)
+    
+    def __str__(self):
+        return self.name
 
     def to_dict(self):            
         return {
