@@ -1,51 +1,104 @@
-<h1 class="title">Histoire du XXIe siècle</h1>
-{% include 'home/timeline.html' %}
-<br />
-<div class="card">
-    <div class="card-content content-read">
-        <div style="column-count: 2; column-gap: 3rem;">
-            <p>
-                Les historiens datent la fin du Grand Froid aux alentours de l’année 2090. 
-            </p>
-            <p>
-                Cette période de grand gel technologique n’est officialisée par aucun décret ni aucun accord. Sa date de début fait pourtant consensus : la Déclaration Universelle du Travail (DUT), promulguée le 11 février 2049. Cette déclaration, par différents articles généraux, met fin à deux siècles de progrès technologiques frénétiques, à l’issue desquels l’humanité ne sait plus en quoi croire. La volonté des Nations Unies, à travers ce texte, est double : répondre dans un premier temps à la diminution drastique des métiers ouvriers qui a fait exploser les taux de chômage partout dans le monde, puis refonder la notion de valeur sociale en la dissociant du « travail », laissant du même coup la place à une refonte globale des structures axiologiques. La DUT consacre la seule production matérielle et lance la lutte contre le nihilisme.
-            </p>
-            <p>
-                Le 25 avril 2057, un ensemble d’anciens entrepreneurs en série redéfinit, en accord avec la DUT, la notion d’entreprise en fondant la religion Quod Totum Contra Est (QTCE). Administrée comme une compagnie de service, celle-ci n’a pour but que de gérer une communauté autour d’idéologies et de croyances communes. Les membres sont nommés des encroyés, les dirigeants des encroyants, et les personnes extérieures à cette religion des nihilés ; un vocabulaire encore utilisé aujourd’hui.
-            </p>
-            <p>
-                Pendant la décennie qui suit, plusieurs religions se créent. Certaines sont confidentielles et ne comptent que peu d’adhérents. D’autres constituent la suite logique des grands cultes des siècles passés. Ainsi, Christ B.C., Mahomet Ingénierie ou encore Je’wishes sont fondées sur le modèle de QTCE et encroient tous leurs adeptes. Même si les États subviennent aux besoins de tous — ou presque — à travers diverses formes de revenus universels, la plupart des humains s’empressent de rejoindre les religions qui leur proposent, contre le respect d’un ensemble de règles, de redonner un sens à leur vie. Même si cela est sujet à débat parmi les historiens, cette grande période de transformation est généralement nommée L’Exode de Nihilie.
-            </p>
-            <p>
-                Le 6 août 2066, l’Organisation de Médiation Religieuse (OMR) est fondée afin d’assurer la bonne entente entre les différentes religions. Les États ne sont déjà plus que des faire-valoir géographiques dont les lois deviennent dérisoires par rapport aux règles communautaires édictées par les religions. Les premiers logements et les premiers salaires à vie sont fournis par ces dernières à leurs encroyés.
-            </p>
-            <p>
-                Le 28 mai 2074, les États, à quelques exceptions près, sont officiellement dissous. L’ONU est démantelée. Un premier gouvernement mondial est nommé par l’OMR pour chapeauter les différentes communautés religieuses.
-            </p>
-            <p>
-                Aujourd’hui, au début du XXIIe siècle, le travail (production matérielle, production de services, recherche et développement) n’est plus la norme et les humains, privés de ce qui faisait l’objectif de leur vie, cherchent de nouvelles valeurs dans les différentes religions auxquelles ils peuvent adhérer.
-            </p>
-            <p>
-                Les États n’existent plus : les humains, majoritairement encroyés, se soumettent aux règles et aux lois définies par leurs religions, qui subviennent en échange à leurs besoins. Le découpage n’est plus géographique, mais communautaire. L’OMR est chargée de la coordination entre les différentes religions ainsi que du cadre dans lequel peuvent s’inscrire les lois de celles-ci.
-            </p>
-            <p>
-                 Les humains se divisent en quatre groupes bien distincts :
-            </p>
-            <p>
-                Les humains de type A constituent la grande majorité de l’humanité. Ils sont soumis à la religion de leurs parents jusqu’à leur majorité, puis doivent s’encroyer dans la religion de leur choix.
-            </p>
-            <p>
-                Les humains de type R sont les seuls à assurer la production matérielle. Ils ont suivi un long processus médical de désentimentatisation (par volonté, par règle religieuse ou par choix de l’OMR) pour supporter leur condition. Ils constituent le bas de l’échelle et seuls leurs besoins matériels sont pourvus. De tels individus ne peuvent s’encroyer et sont soumis à des lois promulguées par l’OMR.
-            </p>
-            <p>
-                Les humains de type Z sont les encroyants qui dirigent les différentes religions. Ils ont suivi une cure de diminution radicale de leur empathie afin de gérer sans état d’âme leur religion.
-            </p>
-            <p>
-                Les nihilés (ou nihilards), enfin, refusent la structure sociétale défendue par l’OMR. Ils ne s’encroient dans aucune religion et doivent donc subvenir eux-mêmes à leurs propres besoins. Ils sont considérés comme la lie de la société : raillés, molestés, craints, parfois enviés, ils sont également la cible de l’OMR qui effectue régulièrement des rafles pour grossir les rangs des types R.
-            </p>
-    
+<div class="container">
+    <h1 class="title papernote mb-0 mt-3">Histoire du XXIe siècle</h1>
+    <div class="section">
+        <div class="paperblock after has-background-white">
+            {% include 'home/timeline.html' %}
         </div>
-       
     </div>
-    
+
+    <div class="card paperblock after before ml-auto">
+        <div class="card-content content-read">
+            <div class="content-columns">
+                <p>
+                    Les historiens datent la fin du Grand Froid aux alentours de l’année 2090.
+                </p>
+                <p>
+                    Cette période de grand gel technologique n’est officialisée par aucun décret ni aucun
+                    accord. Sa date de début fait pourtant consensus : la Déclaration Universelle du Travail
+                    (DUT), promulguée le 11 février 2049. Cette déclaration, par différents articles
+                    généraux, met fin à deux siècles de progrès technologiques frénétiques, à l’issue
+                    desquels l’humanité ne sait plus en quoi croire. La volonté des Nations Unies, à travers
+                    ce texte, est double : répondre dans un premier temps à la diminution drastique des
+                    métiers ouvriers qui a fait exploser les taux de chômage partout dans le monde, puis
+                    refonder la notion de valeur sociale en la dissociant du « travail », laissant du même
+                    coup la place à une refonte globale des structures axiologiques. La DUT consacre la
+                    seule production matérielle et lance la lutte contre le nihilisme.
+                </p>
+                <p>
+                    Le 25 avril 2057, un ensemble d’anciens entrepreneurs en série redéfinit, en accord avec
+                    la DUT, la notion d’entreprise en fondant la religion Quod Totum Contra Est (QTCE).
+                    Administrée comme une compagnie de service, celle-ci n’a pour but que de gérer une
+                    communauté autour d’idéologies et de croyances communes. Les membres sont nommés des
+                    encroyés, les dirigeants des encroyants, et les personnes extérieures à cette religion
+                    des nihilés ; un vocabulaire encore utilisé aujourd’hui.
+                </p>
+                <p>
+                    Pendant la décennie qui suit, plusieurs religions se créent. Certaines sont
+                    confidentielles et ne comptent que peu d’adhérents. D’autres constituent la suite
+                    logique des grands cultes des siècles passés. Ainsi, Christ B.C., Mahomet Ingénierie ou
+                    encore Je’wishes sont fondées sur le modèle de QTCE et encroient tous leurs adeptes.
+                    Même si les États subviennent aux besoins de tous — ou presque — à travers diverses
+                    formes de revenus universels, la plupart des humains s’empressent de rejoindre les
+                    religions qui leur proposent, contre le respect d’un ensemble de règles, de redonner un
+                    sens à leur vie. Même si cela est sujet à débat parmi les historiens, cette grande
+                    période de transformation est généralement nommée L’Exode de Nihilie.
+                </p>
+                <p>
+                    Le 6 août 2066, l’Organisation de Médiation Religieuse (OMR) est fondée afin d’assurer
+                    la bonne entente entre les différentes religions. Les États ne sont déjà plus que des
+                    faire-valoir géographiques dont les lois deviennent dérisoires par rapport aux règles
+                    communautaires édictées par les religions. Les premiers logements et les premiers
+                    salaires à vie sont fournis par ces dernières à leurs encroyés.
+                </p>
+                <p>
+                    Le 28 mai 2074, les États, à quelques exceptions près, sont officiellement dissous.
+                    L’ONU est démantelée. Un premier gouvernement mondial est nommé par l’OMR pour
+                    chapeauter les différentes communautés religieuses.
+                </p>
+                <p>
+                    Aujourd’hui, au début du XXIIe siècle, le travail (production matérielle, production de
+                    services, recherche et développement) n’est plus la norme et les humains, privés de ce
+                    qui faisait l’objectif de leur vie, cherchent de nouvelles valeurs dans les différentes
+                    religions auxquelles ils peuvent adhérer.
+                </p>
+                <p>
+                    Les États n’existent plus : les humains, majoritairement encroyés, se soumettent aux
+                    règles et aux lois définies par leurs religions, qui subviennent en échange à leurs
+                    besoins. Le découpage n’est plus géographique, mais communautaire. L’OMR est chargée de
+                    la coordination entre les différentes religions ainsi que du cadre dans lequel peuvent
+                    s’inscrire les lois de celles-ci.
+                </p>
+                <p>
+                    Les humains se divisent en quatre groupes bien distincts :
+                </p>
+                <p>
+                    Les humains de type A constituent la grande majorité de l’humanité. Ils sont soumis à la
+                    religion de leurs parents jusqu’à leur majorité, puis doivent s’encroyer dans la
+                    religion de leur choix.
+                </p>
+                <p>
+                    Les humains de type R sont les seuls à assurer la production matérielle. Ils ont suivi
+                    un long processus médical de désentimentatisation (par volonté, par règle religieuse ou
+                    par choix de l’OMR) pour supporter leur condition. Ils constituent le bas de l’échelle
+                    et seuls leurs besoins matériels sont pourvus. De tels individus ne peuvent s’encroyer
+                    et sont soumis à des lois promulguées par l’OMR.
+                </p>
+                <p>
+                    Les humains de type Z sont les encroyants qui dirigent les différentes religions. Ils
+                    ont suivi une cure de diminution radicale de leur empathie afin de gérer sans état d’âme
+                    leur religion.
+                </p>
+                <p>
+                    Les nihilés (ou nihilards), enfin, refusent la structure sociétale défendue par l’OMR.
+                    Ils ne s’encroient dans aucune religion et doivent donc subvenir eux-mêmes à leurs
+                    propres besoins. Ils sont considérés comme la lie de la société : raillés, molestés,
+                    craints, parfois enviés, ils sont également la cible de l’OMR qui effectue régulièrement
+                    des rafles pour grossir les rangs des types R.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
 </div>

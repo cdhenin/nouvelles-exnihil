@@ -1,20 +1,18 @@
-
 {% if last_novellas %}
-  <div class="flex space-between">
-    <h1 class="title">Les dernières nouvelles</h1>
-    <a href="{% url 'novellas:index' %}" class="button">Voir tout</a>
+<div class="container">
+  <div id="last-novellas" class="container papernote is-flex is-align-items-center is-justify-content-space-between is-fullwidth is-size-3 ">
+    <h1 class="title is-handwritten m-0 has-text-primary has-text-centered">Les dernières nouvelles</h1>
+    <a href="{% url 'novellas:index' %}" class="button papernote m-0">Voir tout</a>
   </div>
-  <div class="columns is-multiline">
+  <div class="papernotes">
     {% for novella in last_novellas %}
-    <div class="column is-half">
+    <div class="papernote-wrapper">
       {% include 'novellas/listItem.html' %}
     </div>
     {% endfor %}
   </div>
+</div>
+
 {% endif %}
 
-<br />
-
-<div class="margin-top is-one">
-  {% include 'home/presentation.html' %}
-</div>
+{% include 'home/presentation.html' %}

@@ -4,19 +4,23 @@
 $purple: #8A4D76;
 $pink: #FA7C91;
 $brown: #757763;
+$brown-wood: #361600;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
-$green: #63ae9d;
+$green: #5c8d89;
+$green-dark: #3A5A58;
+$blue: #1373A9;
+$paper-white: #f0f0f0;
+$grey-dark: #41403E;
 
 // Update Bulma's global variables
 $family-sans-serif: "Nunito", sans-serif;
-$grey-dark: $brown;
 $grey-light: $beige-light;
 $primary: $green;
-$link: $purple;
+$link: $green-dark;
 
 // Update some of Bulma's component variables
-$body-background-color: $beige-lighter;
+$body-background-color: $brown-wood;
 $control-border-width: 2px;
 $input-border-color: transparent;
 $input-shadow: none;
@@ -35,37 +39,121 @@ $button-border-width: 1px;
 @import "./node_modules/bulma/sass/layout/section.sass";
 @import "./node_modules/bulma/sass/helpers/spacing.sass";
 @import "./node_modules/bulma/sass/helpers/color.sass";
+@import "./node_modules/bulma/sass/helpers/visibility.sass";
+@import "./node_modules/bulma/sass/helpers/flexbox.sass";
+@import "./node_modules/bulma/sass/helpers/typography.sass";
 
-
-.flex {
-    display: flex;
-    &.direction-column {
-        flex-direction: column;
-    }
+@font-face {
+    font-family: Handwritten;
+    src: url('my_nerve/MyNerve.ttf');
 }
 
-.space-between {
-    justify-content: space-between;
+
+html {
+    background-image: url("wood-pattern.png");
 }
 
-.align-end {
-    justify-content: end;
+body {
+    position: relative;
+    /* 88px = height of navbar */
+    min-height: calc(100vh - 88px);
+    padding-bottom: 50px;
+    /* 50px = footer height */
 }
 
-.navbar {
-    border-bottom: 1px solid $primary;
+*::selection {
+    color: white;
+    background: $brown;
+}
+
+html.has-navbar-fixed-top,
+body.has-navbar-fixed-top {
+    padding-top: 88px;
+    /* navbar height */
+}
+
+a.navbar-item:hover,
+a.navbar-item.is-active {
+    color: $green-dark;
+    font-weight: 700;
+}
+
+a.tag.is-primary {
+    background-color: $green-dark;
+}
+
+a.tag:hover {
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .is-fullheight {
     height: 100%;
 }
 
+.is-fullwidth {
+    width: 100%;
+}
+
+.is-handwritten {
+    font-family: Handwritten;
+}
+
+hr {
+    height: 1px;
+    background-color: $green;
+}
+
+#history {
+    margin: 4rem 8rem;
+
+    >.paperblock {
+        padding: 2rem;
+    }
+}
+
+@media screen and (max-width: 864px) {
+    #history {
+        margin: 2rem 0;
+
+        >.paperblock {
+            padding: 0;
+        }
+    }
+
+    .section {
+        padding: 3rem 0.5rem;
+    }
+
+    .is-flex.is-justify-content-space-between {
+        flex-direction: column;
+    }
+}
+
+/* READING CSS */
 .novel-read {
-    .card {
-        max-width: 600px;
+    .paperblock {
+        max-width: 650px;
         text-align: justify;
 
         .content {
+
+            p:first-child {
+                text-indent: 0;
+
+                &::first-letter {
+                    font-weight: bold;
+                    background: $beige-light;
+                    color: $brown;
+                    font-size: 5rem;
+                    padding: 1rem;
+                    margin-right: 5px;
+                    float: left;
+                    border-radius: 3px;
+                    line-height: 1;
+                }
+            }
+
             p {
                 text-indent: 5%;
             }
@@ -76,6 +164,14 @@ $button-border-width: 1px;
 
 .content-read {
     text-align: justify;
+
+    @media screen and (min-width: 768px) {
+        >.content-columns {
+            column-count: 2;
+            column-gap: 3rem;
+        }
+    }
+
     p {
         text-indent: 5%;
     }
@@ -94,17 +190,193 @@ $button-border-width: 1px;
     }
 }
 
+/* PAPERBLOCK CSS */
 
-.margin-top {
-    &.is-one {
-        margin-top: 1rem;
+.paperblock {
+    background: $paper-white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 1000px;
+    min-height: 500px;
+}
+
+.paperblock:before,
+.paperblock:after {
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.paperblock.before:before {
+    content: "";
+}
+
+.paperblock.after:after {
+    content: "";
+}
+
+.paperblock:before {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+}
+
+.paperblock:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+}
+
+/* PAPERNOTE CSS */
+
+.papernote.button {
+    box-shadow: none;
+}
+
+.papernotes {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    gap: 3rem;
+
+    .papernote-wrapper {
+        max-width: 500px;
+        min-width: 350px;
+
+        .paper-tape {
+            position: relative;
+
+            &:before,
+            &:after {
+                background: rgba(255, 255, 235, .6);
+                box-shadow: 0 1px 3px rgba(0, 0, 0, .4);
+                content: "";
+                display: block;
+                height: 30px;
+                position: absolute;
+                margin: auto;
+                width: 100px;
+            }
+        }
+
+        &:nth-child(n) {
+
+            .card {
+                transform: rotate(-1deg);
+            }
+
+            .paper-tape {
+                &:before {
+                    left: -15px;
+                    top: 10px;
+                    transform: rotate(-45deg);
+                }
+
+                &:after {
+                    bottom: 10px;
+                    right: -15px;
+                    transform: rotate(-35deg);
+                }
+            }
+        }
+
+        &:nth-child(3n) {
+            .card {
+                transform: rotate(-2deg);
+            }
+
+            .paper-tape {
+                &:before {
+                    right: -15px;
+                    left: auto;
+                    top: 10px;
+                    transform: rotate(45deg);
+                }
+
+                &:after {
+                    bottom: 10px;
+                    right: auto;
+                    left: -15px;
+                    transform: rotate(35deg);
+                }
+            }
+        }
+
+        &:nth-child(2n) {
+            .card {
+                transform: rotate(2deg);
+            }
+
+            .paper-tape {
+                &:before {
+                    right: -15px;
+                    left: auto;
+                    top: 10px;
+                    transform: rotate(45deg);
+                }
+
+                &:after {
+                    left: -15px;
+                    bottom: auto;
+                    right: auto;
+                    top: 10px;
+                    transform: rotate(-45deg);
+                }
+            }
+
+        }
     }
-    &.is-two {
-        margin-top: 2rem;
+
+    .papernote-wrapper:nth-child(even) {
+        margin: auto;
     }
 }
 
-hr {
-    height: 1px;
-    background-color: $green;
+.papernote {
+    background: $beige-lighter;
+    padding: 0.5rem 0.5rem;
+    margin: .5rem .25rem .25rem;
+    color: $grey-dark;
+    outline: none;
+    box-shadow: 1em 1.5em 1.5em -1em rgba(0, 0, 0, 0.5);
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-sizing: border-box;
+    border: solid 0.1em #4140344E;
+    max-width: 99%;
+}
+
+.papernote.navbar,
+.papernote.title,
+#last-novellas.papernote {
+    width: fit-content;
+}
+
+#last-novellas {
+    gap: 2rem;
+}
+
+.papernote.title {
+    font-family: Handwritten, cursive;
+    text-align: center;
+    color: $primary;
+}
+
+.textured-paper {
+    background-image: url("textured-paper.png");
+}
+
+.is-fit-content {
+    width: fit-content;
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
 }

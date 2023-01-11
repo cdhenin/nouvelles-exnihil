@@ -1,19 +1,19 @@
-<div class="novel">
-  <div class="card">
+<div class="container">
+  <div class="card paperblock  before">
     <div class="card-content">
       <div class="content">
-        <h1>{{character.name}}</h1>
+        <h1 class="is-handwritten is-underlined">{{character.name}}</h1>
         {{ character.biography | safe  }}
       </div>
     </div>
   </div>
 
 {% if character.novellas %}
-<div class="margin-top is-two">
-  <h1 class="title">Ses nouvelles</h1>
-  <div class="columns is-multiline">
+<div class="container py-6">
+  <h1 class="title papernote m-0">Ses nouvelles</h1>
+  <div class="papernotes">
     {% for novella in character.novellas %}
-    <div class="column is-half">
+    <div class="papernote-wrapper">
       {% include 'novellas/listItem.html' %}
     </div>
     {% endfor %}
