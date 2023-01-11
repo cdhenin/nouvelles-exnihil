@@ -8,6 +8,7 @@ $brown-wood: #361600;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 $green: #5c8d89;
+$green-dark: #3A5A58;
 $blue: #1373A9;
 $paper-white: #f0f0f0;
 $grey-dark: #41403E;
@@ -16,7 +17,7 @@ $grey-dark: #41403E;
 $family-sans-serif: "Nunito", sans-serif;
 $grey-light: $beige-light;
 $primary: $green;
-$link: $pink;
+$link: $green-dark;
 
 // Update some of Bulma's component variables
 $body-background-color: $brown-wood;
@@ -69,6 +70,21 @@ html.has-navbar-fixed-top,
 body.has-navbar-fixed-top {
     padding-top: 88px;
     /* navbar height */
+}
+
+a.navbar-item:hover,
+a.navbar-item.is-active {
+    color: $green-dark;
+    font-weight: 700;
+}
+
+a.tag.is-primary {
+    background-color: $green-dark;
+}
+
+a.tag:hover {
+    font-weight: 700;
+    text-decoration: none;
 }
 
 .is-fullheight {
@@ -132,8 +148,9 @@ hr {
                     font-size: 5rem;
                     padding: 1rem;
                     margin-right: 5px;
-                    float: inline-start;
+                    float: left;
                     border-radius: 3px;
+                    line-height: 1;
                 }
             }
 

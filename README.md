@@ -1,13 +1,24 @@
 # Nouvelles exnihil
 
-Code source of https://nouvelles.exnihil.fr/
+This is the source code of the website [nouvelles.exnihil.fr](https://nouvelles.exnihil.fr/).
+
+The site presents texts and novellas written by Florent Naud about a fictional futuristic universe.
+
+![nouvelle exnihil image](style/img/og-image.png)
+
+## Technical stack
+* postgresql
+* Python django
+* Bulma CSS
+* node-sass
+
 
 ### Prerequites 
 * postgresql with a db `nouvelles_exnihil`
 * pipenv
 * python 3.6
 * psycopg2-binary 2.8.6
-
+* node v16.17.0
 
 ### Installation
 
@@ -33,9 +44,9 @@ $ python manage.py runserver
 
 ### Development
 
-- Regenerate static folder
-```
-$ python manage.py collectstatic --noinput --clear
+- Set a .env file with `DEBUG=True` and run 
+ ```
+$ export $(cat .env | xargs)
 ```
 
 - Generate css from scss 
@@ -44,3 +55,15 @@ $ cd style
 $ yarn install
 $ yarn start
 ```
+
+- Launch django
+```
+$ python manage.py migrate
+$ python manage.py runserver
+```
+
+- Regenerate static folder
+```
+$ python manage.py collectstatic --noinput --clear
+```
+
