@@ -1,0 +1,2 @@
+User-Agent: *
+Sitemap: https://nouvelles.exnihil.fr/sitemap.xml

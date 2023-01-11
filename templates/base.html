@@ -1,29 +1,44 @@
 {% load static %}
 <!DOCTYPE html>
 <html class="has-navbar-fixed-top">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>{{title}}</title>
-    <link rel="icon" href="{% static 'favicon.ico' %}" />
-    <link title="timeline-styles" rel="stylesheet" href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
-    <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
-    <link rel="stylesheet" type="text/css" href="{% static 'timeline-override.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
-    <link rel="stylesheet" type="text/css" href="{% static 'font.css' %}">
-  </head>
-  <body>
-    {% include 'common/navbar.html' %}
-    <section class="section">
-      {% include template %}
-    </section>
-    {% include 'common/footer.html' %}
 
-    <script type="text/javascript">
-      document.getElementById("burger").addEventListener("click", function(event) {
-        document.getElementById("navbar").classList.toggle('is-active')
-        event.target.classList.toggle('is-active')
-      });
-    </script>
-  </body>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{title}}</title>
+
+  <meta name="description"
+    content=" Les historiens datent la fin du Grand Froid aux alentours de l’année 2090. Cette période de grand gel technologique n’est officialisée par aucun décret ni aucun accord. Sa date de début fait pourtant consensus : la Déclaration Universelle du Travail (DUT), promulguée le 11 février 2049. Cette déclaration, par différents articles généraux, met fin à deux siècles de progrès technologiques frénétiques, à l’issue desquels l’humanité ne sait plus en quoi croire.">
+  <meta property="og:url" content="https://nouvelles.exnihil.fr" />
+  <meta property="og:title" content="Nouvelles Exnihil - Florent Naud" />
+  <meta property="og:description"
+    content="Les historiens datent la fin du Grand Froid aux alentours de l’année 2090. Cette période de grand gel technologique n’est officialisée par aucun décret ni aucun accord. Sa date de début fait pourtant consensus : la Déclaration Universelle du Travail (DUT), promulguée le 11 février 2049. Cette déclaration, par différents articles généraux, met fin à deux siècles de progrès technologiques frénétiques, à l’issue desquels l’humanité ne sait plus en quoi croire." />
+  <meta property="og:image" content="https://nouvelles.exnihil.fr/static/og-image.png" />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="fr_FR" />
+
+  <link rel="icon" href="{% static 'favicon.ico' %}" />
+  <link title="timeline-styles" rel="stylesheet"
+    href="https://cdn.knightlab.com/libs/timeline3/latest/css/timeline.css">
+  <script src="https://cdn.knightlab.com/libs/timeline3/latest/js/timeline.js"></script>
+  <link rel="stylesheet" type="text/css" href="{% static 'timeline-override.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'index.css' %}">
+  <link rel="stylesheet" type="text/css" href="{% static 'font.css' %}">
+</head>
+
+<body>
+  {% include 'common/navbar.html' %}
+  <section class="section">
+    {% include template %}
+  </section>
+  {% include 'common/footer.html' %}
+
+  <script type="text/javascript">
+    document.getElementById("burger").addEventListener("click", function (event) {
+      document.getElementById("navbar").classList.toggle('is-active')
+      event.target.classList.toggle('is-active')
+    });
+  </script>
+</body>
+
 </html>
