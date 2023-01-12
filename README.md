@@ -7,11 +7,10 @@ The site presents texts and novellas written by Florent Naud about a fictional f
 ![nouvelle exnihil image](style/img/og-image.png)
 
 ## Technical stack
-* postgresql
-* Python django
+* Postgresql
+* Python Django
 * Bulma CSS
 * node-sass
-
 
 ### Prerequites 
 * postgresql with a db `nouvelles_exnihil`
