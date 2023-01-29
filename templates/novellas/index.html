@@ -1,26 +1,28 @@
-{% if novellas %}
-<div class="is-fit-content">
-  <h1 class="papernote title">Les nouvelles</h1>
+<div class="container">
+  {% if novellas %}
+  <div class="is-fit-content">
+    <h1 class="papernote title">Les nouvelles</h1>
 
-  {% if tags %}
-  <div class="papernote textured-paper">
-    <span class="is-size-5 my-3">Filtres :</span>
-    <div class="tags are-medium is-capitalized has-addons">
-      {% for tag in tags %}
-      <div class="tag is-secondary">{{ tag.name }}</div>
-      <a class="tag is-delete" href="{% url 'novellas:index'%}"></a>
-      {% endfor %}
+    {% if tags %}
+    <div class="papernote textured-paper">
+      <span class="is-size-5 my-3">Filtres :</span>
+      <div class="tags are-medium is-capitalized has-addons">
+        {% for tag in tags %}
+        <div class="tag is-secondary">{{ tag.name }}</div>
+        <a class="tag is-delete" href="{% url 'novellas:index'%}"></a>
+        {% endfor %}
+      </div>
     </div>
+    {% endif %}
+  </div>
+
+
+  <div class="papernotes">
+    {% for novella in novellas %}
+    <div class="papernote-wrapper">
+      {% include 'novellas/listItem.html' %}
+    </div>
+    {% endfor %}
   </div>
   {% endif %}
 </div>
-
-
-<div class="papernotes">
-  {% for novella in novellas %}
-  <div class="papernote-wrapper">
-    {% include 'novellas/listItem.html' %}
-  </div>
-  {% endfor %}
-</div>
-{% endif %}

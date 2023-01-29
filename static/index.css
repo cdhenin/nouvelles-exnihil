@@ -236,7 +236,7 @@ th {
     text-align: inherit; }
 
 html {
-  background-color: #361600;
+  background-color: #774c35;
   font-size: 16px;
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
@@ -5551,7 +5551,7 @@ a.has-text-danger-dark:hover, a.has-text-danger-dark:focus {
   src: url("my_nerve/MyNerve.ttf"); }
 
 html {
-  background-image: url("wood-pattern.png"); }
+  background-image: url("purty-wood.png"); }
 
 body {
   position: relative;
@@ -5574,12 +5574,22 @@ a.navbar-item.is-active {
   color: #3A5A58;
   font-weight: 700; }
 
+a.tag {
+  transition: all .5s ease;
+  text-decoration: none; }
+
 a.tag.is-primary {
-  background-color: #3A5A58; }
+  background-color: #3A5A58;
+  transition: all .5s ease; }
 
 a.tag:hover {
-  font-weight: 700;
+  background-color: #3A5A58;
+  color: white;
   text-decoration: none; }
+
+a.tag.is-primary:hover {
+  background-color: white;
+  color: #3A5A58; }
 
 .is-fullheight {
   height: 100%; }
@@ -5740,6 +5750,8 @@ hr {
       transform: rotate(-45deg); }
   .papernotes .papernote-wrapper:nth-child(even) {
     margin: auto; }
+  .papernotes .papernote-wrapper {
+    margin-top: 1rem; }
 
 .papernote {
   background: #EFF0EB;
@@ -5777,3 +5789,28 @@ hr {
   bottom: 0;
   right: 0;
   text-align: center; }
+
+a:not(.button):not(.tag) {
+  background-image: linear-gradient(to right, #5c8d89, #5c8d89 50%, #41403E 50%);
+  background-size: 200% 100%;
+  background-position: -100%;
+  position: relative;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  transition: all 0.3s ease-in-out;
+  text-decoration: none;
+  font-weight: 600; }
+  a:not(.button):not(.tag):before {
+    content: '';
+    background: #5c8d89;
+    display: block;
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out; }
+  a:not(.button):not(.tag):hover {
+    background-position: 0; }
+  a:not(.button):not(.tag):hover::before {
+    width: 100%; }

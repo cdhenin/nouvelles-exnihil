@@ -4,7 +4,7 @@
 $purple: #8A4D76;
 $pink: #FA7C91;
 $brown: #757763;
-$brown-wood: #361600;
+$brown-wood: #774c35;
 $beige-light: #D0D1CD;
 $beige-lighter: #EFF0EB;
 $green: #5c8d89;
@@ -50,7 +50,7 @@ $button-border-width: 1px;
 
 
 html {
-    background-image: url("wood-pattern.png");
+    background-image: url("purty-wood.png");
 }
 
 body {
@@ -78,13 +78,25 @@ a.navbar-item.is-active {
     font-weight: 700;
 }
 
+a.tag {
+    transition: all .5s ease;
+    text-decoration: none;
+}
+
 a.tag.is-primary {
     background-color: $green-dark;
+    transition: all .5s ease;
 }
 
 a.tag:hover {
-    font-weight: 700;
+    background-color: $green-dark;
+    color: $white;
     text-decoration: none;
+}
+
+a.tag.is-primary:hover {
+    background-color: $white;
+    color: $green-dark;
 }
 
 .is-fullheight {
@@ -335,7 +347,12 @@ hr {
     .papernote-wrapper:nth-child(even) {
         margin: auto;
     }
+
+    .papernote-wrapper {
+        margin-top: 1rem;
+    }
 }
+
 
 .papernote {
     background: $beige-lighter;
@@ -379,4 +396,37 @@ hr {
     bottom: 0;
     right: 0;
     text-align: center;
+}
+
+
+a:not(.button):not(.tag) {
+    background-image: linear-gradient(to right, $primary, $primary 50%, $grey-dark 50%);
+    background-size: 200% 100%;
+    background-position: -100%;
+    position: relative;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+    text-decoration: none;
+    font-weight: 600;
+
+    &:before {
+        content: '';
+        background: $primary;
+        display: block;
+        position: absolute;
+        bottom: -2px;
+        left: 0;
+        width: 0;
+        height: 3px;
+        transition: all 0.3s ease-in-out;
+    }
+
+    &:hover {
+        background-position: 0;
+    }
+
+    &:hover::before {
+        width: 100%;
+    }
 }
