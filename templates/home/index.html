@@ -1,8 +1,15 @@
 {% if last_novellas %}
 <div class="container">
-  <div id="last-novellas" class="container papernote is-flex is-align-items-center is-justify-content-space-between is-fullwidth is-size-3 ">
-    <h1 class="title is-handwritten m-0 has-text-primary has-text-centered">Les dernières nouvelles</h1>
-    <a href="{% url 'novellas:index' %}" class="button papernote m-0">Voir tout</a>
+  <div id="last-novellas"
+    class="container is-flex is-align-items-center is-justify-content-start is-fullwidth is-size-3 ">
+    <h1 class="title m-0 has-text-left">
+      Les dernières nouvelles
+      <a href="{% url 'novellas:index' %}" class="button arrow-button m-0">
+        <div class="arrow-scroll"></div>Tout voir
+      </a>
+    </h1>
+
+
   </div>
   <div class="papernotes">
     {% for novella in last_novellas %}

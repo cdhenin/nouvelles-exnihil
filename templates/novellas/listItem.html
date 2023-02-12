@@ -2,13 +2,13 @@
 <div class="card is-fullheight papernote paper-tape">
   <div class="card-content">
       <div class="is-flex is-justify-content-space-between">
-        <h2 class="title is-4">{{ novella.title }}</h2>
+        <h2 class="title is-4 is-handwritten">{{ novella.title }}</h2>
         <span class="is-handwritten subtitle">{{ novella.created_at|localtime|date:'d/m/Y' }}</span>
       </div>
       <div class="content">
         {{ novella.excerpt }}
       </div>
-      <div class="tags is-capitalized are-medium">
+      <div class="tags is-handwritten is-capitalized are-medium">
         {% for character in novella.characters %}
           <a class="tag is-primary" href="{% url 'characters:detail' character.id %}">{{character.name}}</a>
         {% endfor %}
