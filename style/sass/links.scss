@@ -1,0 +1,85 @@
+
+a:not(.button):not(.burger):not(.is-delete) {
+    z-index: 1;
+    transition: 0.2s ease-in-out 0.2s;
+    position: relative;
+    background-color: unset;
+
+    &:hover {
+        text-decoration: none;
+    }
+
+    &::before {
+        content: "";
+        background-color: lighten($primary, 21%);
+        height: 0.2rem;
+        margin: auto;
+        display: block;
+        position: absolute;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        transform: scaleY(1) rotate(1deg);
+        transition: 0.2s ease-in-out 0.2s;
+        border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    }
+
+    &:hover:before {
+        height: 0.8rem;
+        background-color: lighten($primary, 21%);
+        transform: scaleY(2);
+        transition: 0.2s ease-in-out 0.2s;
+    }
+
+    &.navbar-item {
+        text-transform: uppercase;
+        color: $black;
+        padding-left: 0;
+        padding-right: 0;
+        margin: 0 0.5rem;
+
+        &::before {
+            height: 0rem;
+            bottom: 10px;
+        }
+
+        &:hover,
+        &.is-active {
+            color: $black;
+            background-color: unset;
+        }
+
+        &:hover:before,
+        &.is-active:before {
+            height: 0.8rem;
+        }
+    }
+
+    &.tag {
+        &.is-secondary {
+            background-color: unset;
+            color: $black;
+
+            &:before {
+                background-color: $grey-light;
+                transform: rotate(-1deg);
+                height: 0.8rem;
+            }
+
+            &:hover:before {
+                transform: rotate(-1deg) scaleY(2);
+            }
+        }
+
+        &.is-primary {
+            background-color: unset;
+            color: $black;
+        }
+
+        &:before {
+            bottom: 6px;
+            height: 0.8rem;
+        }
+    }
+}

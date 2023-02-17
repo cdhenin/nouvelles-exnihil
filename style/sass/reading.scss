@@ -1,0 +1,58 @@
+.novel-read {
+    .paperblock {
+        max-width: 650px;
+        text-align: justify;
+
+        .content {
+
+            p:first-child {
+                text-indent: 0;
+
+                &::first-letter {
+                    font-weight: bold;
+                    background: $beige-light;
+                    color: $brown;
+                    font-size: 5rem;
+                    padding: 1rem;
+                    margin-right: 5px;
+                    float: left;
+                    border-radius: 3px;
+                    line-height: 1;
+                }
+            }
+
+            p {
+                text-indent: 5%;
+            }
+        }
+
+    }
+}
+
+.content-read {
+    text-align: justify;
+
+    @media screen and (min-width: 768px) {
+        >.content-columns {
+            column-count: 2;
+            column-gap: 3rem;
+        }
+    }
+
+    p {
+        text-indent: 5%;
+    }
+}
+
+.card {
+    display: flex;
+    flex-direction: column;
+
+    .card-content {
+        flex-grow: 1;
+    }
+
+    footer {
+        padding: 1rem;
+    }
+}

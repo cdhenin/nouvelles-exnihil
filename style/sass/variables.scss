@@ -1,0 +1,30 @@
+// Set your brand colors
+$purple: #8A4D76;
+$pink: #FA7C91;
+$brown: #757763;
+$brown-wood: #774c35;
+$beige-light: #D0D1CD;
+$beige-lighter: #EFF0EB;
+$green: #5c8d89;
+$green-dark: #3A5A58;
+$blue: #1373A9;
+$paper-white: #f0f0f0;
+$grey-dark: #41403E;
+$black: #0a0a0a;
+
+
+// Update Bulma's global variables
+$family-sans-serif: Merriweather;
+$grey-light: $beige-light;
+$primary: $green;
+$link: $green-dark;
+
+// Update some of Bulma's component variables
+$body-background-color: $brown-wood;
+$control-border-width: 2px;
+$input-border-color: transparent;
+$input-shadow: none;
+
+$button-border-color: $primary;
+$button-hover-border-color: $brown;
+$button-border-width: 1px;

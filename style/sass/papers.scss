@@ -1,0 +1,118 @@
+
+/* PAPERBLOCK CSS */
+.paperblock {
+    background: $paper-white;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    position: relative;
+    max-width: 1000px;
+    min-height: 500px;
+}
+
+.paperblock:before,
+.paperblock:after {
+    height: 98%;
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.paperblock.before:before {
+    content: "";
+}
+
+.paperblock.after:after {
+    content: "";
+}
+
+.paperblock:before {
+    background: #fafafa;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    left: -5px;
+    top: 4px;
+    transform: rotate(-2.5deg);
+}
+
+.paperblock:after {
+    background: #f6f6f6;
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.2);
+    right: -3px;
+    top: 1px;
+    transform: rotate(1.4deg);
+}
+
+/* PAPERNOTE CSS */
+
+.papernote.button {
+    box-shadow: none;
+}
+
+.papernotes {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 2rem 0;
+    gap: 3rem;
+
+    .papernote-wrapper {
+        max-width: 500px;
+        min-width: 350px;
+        margin-top: auto;
+        margin-bottom: auto;
+
+        &:nth-child(n) {
+            .card {
+                transform: rotate(-1deg);
+            }
+        }
+
+        &:nth-child(3n) {
+            .card {
+                transform: rotate(-2deg);
+            }
+        }
+
+        &:nth-child(2n) {
+            .card {
+                transform: rotate(2deg);
+            }
+        }
+    }
+
+    .papernote-wrapper:nth-child(even):not(:first-child):not(:last-child) {
+        margin: auto;
+    }
+
+    .papernote-wrapper:last-child:not(:first-child):not(:nth-child(even)) {
+        margin-left: auto;
+    }
+
+    .papernote-wrapper {
+        margin-top: 1rem;
+    }
+}
+
+
+.papernote {
+    background: $beige-lighter;
+    padding: 0.5rem 0.5rem;
+    margin: .5rem .25rem .25rem;
+    color: $grey-dark;
+    outline: none;
+    border-radius: 255px 15px 225px 15px/15px 225px 15px 255px;
+    box-sizing: border-box;
+    border: solid 0.1em #4140344E;
+    max-width: 99%;
+}
+
+.papernote.navbar,
+.papernote.title,
+#last-novellas.papernote {
+    width: fit-content;
+}
+
+#last-novellas {
+    gap: 2rem;
+}
+
+.textured-paper {
+    background-image: url("textured-paper.png");
+}

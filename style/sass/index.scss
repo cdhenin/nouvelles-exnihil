@@ -1,0 +1,102 @@
+@charset "utf-8";
+
+@import "variables.scss";
+@import "fonts.scss";
+
+// Import only what you need from Bulma
+@import "./node_modules/bulma/sass/utilities/_all.sass";
+@import "./node_modules/bulma/sass/base/_all.sass";
+@import "./node_modules/bulma/sass/grid/columns.sass";
+@import "./node_modules/bulma/sass/elements/_all.sass";
+@import "./node_modules/bulma/sass/components/card.sass";
+@import "./node_modules/bulma/sass/components/navbar.sass";
+@import "./node_modules/bulma/sass/layout/section.sass";
+@import "./node_modules/bulma/sass/helpers/spacing.sass";
+@import "./node_modules/bulma/sass/helpers/color.sass";
+@import "./node_modules/bulma/sass/helpers/visibility.sass";
+@import "./node_modules/bulma/sass/helpers/flexbox.sass";
+@import "./node_modules/bulma/sass/helpers/typography.sass";
+
+@import "timeline.scss";
+@import "papers.scss";
+@import "titles.scss";
+@import "reading.scss";
+@import "links.scss";
+
+
+html {
+    background-image: url("purty-wood.png");
+}
+
+body {
+    position: relative;
+    /* 88px = height of navbar */
+    min-height: calc(100vh - 88px);
+    padding-bottom: 50px;
+    /* 50px = footer height */
+}
+
+*::selection {
+    color: white;
+    background: $green;
+}
+
+html.has-navbar-fixed-top,
+body.has-navbar-fixed-top {
+    padding-top: 88px;
+    /* navbar height */
+}
+
+.is-fullheight {
+    height: 100%;
+}
+
+.is-fullwidth {
+    width: 100%;
+}
+
+.is-fit-content {
+    width: fit-content;
+}
+
+.is-handwritten {
+    font-family: Handwritten;
+}
+
+hr {
+    height: 1px;
+    background-color: $green;
+}
+
+#history {
+    margin: 4rem 8rem;
+
+    >.paperblock {
+        padding: 2rem;
+    }
+}
+
+.footer {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+}
+
+@media screen and (max-width: 864px) {
+    #history {
+        margin: 2rem 0;
+
+        >.paperblock {
+            padding: 0;
+        }
+    }
+
+    .section {
+        padding: 3rem 0.5rem;
+    }
+
+    .is-flex.is-justify-content-space-between {
+        flex-direction: column;
+    }
+}
