@@ -12,16 +12,49 @@ The site presents texts and novellas written by Florent Naud about a fictional f
 * Bulma CSS
 * node-sass
 
-### Prerequites 
+### How to run (development)
+
+#### With Docker, docker-compose and make
+
+##### Installation 
+
+```
+$ make setenv ## Create and fill .env file for development
+$ make start ## Launch project with postgres database, migration and django web server
+$ make seed-local-db ## Fill db container with test data
+```
+
+##### Work on CSS
+
+```
+$ make css-watch ## Compile scss files with watch mode if you want to work on 
+```
+
+or 
+
+```
+$ make css-build ## Compile scss files
+```
+
+##### Deal with static files
+
+```
+$ make collectstatic ## Launch collectstatic command in the docker web container and copy static folder on the host machine 
+```
+
+#### Without Docker
+
+##### Prerequites 
 * postgresql with a db `nouvelles_exnihil`
 * pipenv
 * python 3.6
 * psycopg2-binary 2.8.6
 * node v16.17.0
 
-### Installation
+##### Installation 
 
 Run:
+
 ```
 $ pipenv shell
 $ pipenv install
@@ -41,12 +74,29 @@ $ python manage.py migrate
 $ python manage.py runserver
 ```
 
-### Development
+- Set a .env file with 
+```
+DEBUG=True
+POSTGRES_PASSWORD='<your postgres user>'
+POSTGRES_USER='<your postgres user>'
+ALLOWED_HOSTS='localhost'
+``` 
 
-- Set a .env file with `DEBUG=True` and run 
+and run 
+
  ```
 $ export $(cat .env | xargs)
 ```
+
+##### Launch webapp
+
+- Launch django
+```
+$ python manage.py migrate
+$ python manage.py runserver
+```
+
+##### Work on CSS
 
 - Generate css from scss 
 ```
@@ -55,11 +105,7 @@ $ yarn install
 $ yarn start
 ```
 
-- Launch django
-```
-$ python manage.py migrate
-$ python manage.py runserver
-```
+##### Deal with static files
 
 - Regenerate static folder
 ```

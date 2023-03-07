@@ -25,8 +25,7 @@ SECRET_KEY = os.environ.get('DJANGO_SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get('DEBUG', False)
 
-ALLOWED_HOSTS = ['nouvelles.exnihil.fr', 'localhost']
-
+ALLOWED_HOSTS = os.environ.get('ALLOWED_HOSTS').split(',') if os.environ.get('ALLOWED_HOSTS') else ['nouvelles.exnihil.fr']
 
 # Application definition
 
@@ -87,8 +86,8 @@ DATABASES = {
         'NAME': 'nouvelles_exnihil',
         'USER': os.environ.get('POSTGRES_USER', 'nouvelles'),
         'PASSWORD': os.environ.get('POSTGRES_PASSWORD', '7gQHtYzG5aHxThoxcpP8mfMJtTiL'),
-        'HOST': '127.0.0.1',
-        'PORT': '5432',
+        'HOST': os.environ.get('POSTGRES_HOST', '127.0.0.1'),
+        'PORT': 5432,
     }
 }
 
@@ -138,7 +137,6 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
-
 # TINYMCE
 
 TINYMCE_DEFAULT_CONFIG = {
@@ -146,6 +144,4 @@ TINYMCE_DEFAULT_CONFIG = {
   'width': '100%',
   'menubar': False,
   'toolbar': 'undo redo | formatselect | bold italic backcolor | alignleft aligncenter alignright alignjustify | bullist numlist outdent indent | removeformat | help',
-  # 'content_css': '/static/codepen.css',
-  # 'valid_elements' : '-p'
 }
